@@ -33,8 +33,12 @@ app.patch( '/products/:id', (req, res) => {
 })
 
 // end point for removing products
-
-
+app.delete('/products/:id', (req, res) => {
+  const productIndex = products.findIndex(t => t.id === parseInt(req.params.id));
+  if (productIndex === -1) return res.status(404).json({message: "Product not found"})
+  products.splice(productIndex, 1);
+  res.status(204).json({message:"Product deleted Successfully"}); 
+});
 
 
 
