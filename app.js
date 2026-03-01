@@ -32,8 +32,6 @@ app.patch( '/products/:id', (req, res) => {
     res.status(200).json(product)
 })
 
-// end point for removing products
-
 
 
 
