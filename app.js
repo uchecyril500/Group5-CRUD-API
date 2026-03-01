@@ -27,7 +27,7 @@ app.post('/products', (req, res) => {
 
 app.patch( '/products/:id', (req, res) => {
     const product = products.find(t => t.id === parseInt(req.params.id)); //find array
-    if (!product) return res.status(404).json({message: 'Todo not found'})
+    if (!product) return res.status(404).json({message: 'Product not found'})
     Object.assign(product, req.body)
     res.status(200).json(product)
 })
